@@ -15,11 +15,11 @@
 ## Add meta data about your application
 golem::fill_desc(
   pkg_name = "rEstIreland", # The Name of the package containing the App 
-  pkg_title = "PKG_TITLE", # The Title of the package containing the App 
-  pkg_description = "PKG_DESC.", # The Description of the package containing the App 
+  pkg_title = "Hamiltons's R estimates for Irish provinces", # The Title of the package containing the App 
+  pkg_description = "Golem package for R estimates for Irish provinces.", # The Description of the package containing the App 
   author_first_name = "AUTHOR_FIRST", # Your First Name
   author_last_name = "AUTHOR_LAST", # Your Last Name
-  author_email = "AUTHOR@MAIL.COM", # Your Email
+  author_email = "consultoria@rseis.com.br", # Your Email
   repo_url = NULL # The URL of the GitHub Repo (optional) 
 )     
 
@@ -47,7 +47,7 @@ golem::use_recommended_deps()
 ## Favicon ----
 # If you want to change the favicon (default is golem's one)
 golem::remove_favicon()
-golem::use_favicon() # path = "path/to/ico". Can be an online file. 
+golem::use_favicon("inst/app/www/favicon.png") # path = "path/to/ico". Can be an online file. 
 
 ## Add helper functions ----
 golem::use_utils_ui()
