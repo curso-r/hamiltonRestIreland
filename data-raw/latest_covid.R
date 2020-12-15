@@ -10,10 +10,11 @@ latest_covid = read.csv(
   dplyr::filter(n == max(n)) %>% 
   dplyr::left_join(provinces, by = c('CountyName' = 'County'))
 
-old_irish_county_data = readRDS('data-raw/latest_irish_county_data.rds')
-if(nrow(latest_covid) > nrow(old_irish_county_data)) {
-  saveRDS(latest_covid, file = 'latest_irish_county_data.rds')  
+old_irish_county_data = load('data/latest_covid.rda')
+if(identical(latest_covid, old_irish_county_data)) {
+  usethis::ui_done("Nothing to update")
 } else {
-  latest_covid = readRDS(file = 'latest_irish_county_data.rds')
-}
-usethis::use_data(latest_covid, overwrite = TRUE)
+  usethis::use_data(latest_covid, overwrite = TRUE)
+  usethis::ui_done("dataset updated!")
+  deploy_app <- 1
+} 
