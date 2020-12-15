@@ -32,8 +32,8 @@ jobs:
           Rscript -e 'install.packages("gert")'
           Rscript -e 'install.packages("rsconnect")'
           Rscript -e 'install.packages("remotes")'
-          Rscript -e 'install.packages("dplyr")'
-          Rscript -e 'install.packages("usethis", dependencies = TRUE)'
+          Rscript -e 'install.packages(c("dplyr", "gh", "git2r"))'
+          Rscript -e "install.packages('https://cran.r-project.org/src/contrib/Archive/usethis/usethis_1.6.0.tar.gz', repos=NULL, type='source')"
       - name: Update the dataset and deploy
         run: |
           Rscript update_data.R ${{secrets.SHINYAPPS_TOKEN}} ${{secrets.SHINYAPPS_SECRET}}
