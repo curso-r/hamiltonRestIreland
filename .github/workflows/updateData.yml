@@ -32,7 +32,7 @@ jobs:
           Rscript -e 'install.packages("gert")'
           Rscript -e 'install.packages("rsconnect")'
           Rscript -e 'install.packages("remotes")'
-          Rscript -e 'install.packages(c("dplyr", "gh", "git2r"))'
+          Rscript -e 'install.packages(c("dplyr", "gh", "git2r", "clipr", "desc", "fs", "rematch2", "rprojroot", "whisker", "withr"))'
           Rscript -e "install.packages('https://cran.r-project.org/src/contrib/Archive/usethis/usethis_1.6.0.tar.gz', repos=NULL, type='source')"
       - name: Update the dataset and deploy
         run: |
