@@ -1,4 +1,5 @@
 ## code to prepare `latest_covid` dataset goes here
+library(dplyr)
 provinces <-  read.csv('data-raw/provinces.csv')
 
 latest_covid = read.csv(
